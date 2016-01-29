@@ -41,3 +41,54 @@ int main() {
 
     return 0;
 }
+
+
+// -------------------------------- Alternatively --------------------------------
+// Run time: 0.012 sec
+/*
+
+#include <cstdio>
+#include <vector>
+using namespace std;
+
+const int M = 10000007;
+
+int a, b, c, d, e, f;
+vector<int> dp;
+
+int fn(int n) {
+    if(dp[n] != -1) return dp[n];
+
+    return dp[n] = (fn(n-1) + fn(n-2) + fn(n-3) + fn(n-4) + fn(n-5) + fn(n-6)) % M;
+}
+
+int main()
+{
+    //freopen("in", "r", stdin);
+    //freopen("out", "w", stdout);
+
+    int n, t;
+
+    scanf("%d", &t);
+
+    for(int tc = 1; tc <= t; ++tc) {
+        dp.clear();
+
+        scanf("%d %d %d %d %d %d %d", &a, &b, &c, &d, &e, &f, &n);
+
+        dp.assign(n+1, -1);
+
+        dp[0] = a % M;
+        dp[1] = b % M;
+        dp[2] = c % M;
+        dp[3] = d % M;
+        dp[4] = e % M;
+        dp[5] = f % M;
+
+        printf("Case %d: %d\n", tc, fn(n));
+    }
+
+    return 0;
+}
+
+*/
