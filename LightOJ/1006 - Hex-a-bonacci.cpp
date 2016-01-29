@@ -1,3 +1,5 @@
+// Run time: 0.024 sec
+
 #include <iostream>
 #include<stdio.h>
 using namespace std;
