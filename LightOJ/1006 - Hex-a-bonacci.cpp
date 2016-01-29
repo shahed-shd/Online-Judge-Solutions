@@ -94,3 +94,42 @@ int main()
 }
 
 */
+
+
+// --------------------------- Alternatively (iterative, not recursive) ---------------------------
+// Run time : 0.004 sec
+/*
+#include <cstdio>
+using namespace std;
+
+const int MAXN = 10000+5, M = 10000007;
+
+int main()
+{
+    //freopen("in", "r", stdin);
+    //freopen("out", "w", stdout);
+
+    int t;
+    scanf("%d", &t);
+
+    for(int tc = 1; tc <= t; ++tc) {
+        int arr[MAXN], tmp;
+
+        for(int i = 0; i < 6; ++i) {
+            scanf("%d", &tmp);
+            arr[i] = tmp % M;
+        }
+
+        int n;
+        scanf("%d", &n);
+
+        for(int i = 6; i <= n; ++i)
+            arr[i] = (arr[i-1] + arr[i-2] + arr[i-3] + arr[i-4] + arr[i-5] + arr[i-6]) % M;
+
+        printf("Case %d: %d\n", tc, arr[n]);
+    }
+
+    return 0;
+}
+
+*/
