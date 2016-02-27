@@ -39,3 +39,61 @@ int main()
 
     return 0;
 }
+
+
+// ---------------- Alternatively ----------------
+/*
+
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int  main()
+{
+    ios::sync_with_stdio(false);
+
+    int t;
+    cin >> t;
+
+    for(int tc = 1; tc <= t; ++tc) {
+        stack<string> st_b, st_f;
+
+        string cmd, currPage("http://www.lightoj.com/");
+
+        cout << "Case " << tc << ":\n";
+
+        while(cin >> cmd, cmd != "QUIT") {
+            if(cmd == "BACK") {
+                if(st_b.empty()) cout << "Ignored\n";
+                else {
+                    st_f.push(currPage);
+                    currPage = st_b.top();
+                    st_b.pop();
+                    cout << currPage << '\n';
+                }
+            }
+            else if(cmd == "FORWARD") {
+                if(st_f.empty()) cout << "Ignored\n";
+                else {
+                    st_b.push(currPage);
+                    currPage = st_f.top();
+                    st_f.pop();
+                    cout << currPage << '\n';
+                }
+            }
+            else if(cmd == "VISIT") {
+                stack<string> st_empty;
+                swap(st_f, st_empty);
+
+                st_b.push(currPage);
+
+                cin >> currPage;
+                cout << currPage << '\n';
+            }
+        }
+    }
+
+    return 0;
+}
+
+*/
