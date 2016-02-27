@@ -1,3 +1,38 @@
+#include <cstdio>
+#include <bitset>
+using namespace std;
+
+int  main()
+{
+    //freopen("in", "r", stdin);
+
+    int t;
+    scanf("%d", &t);
+
+    for(int tc = 1; tc <= t; ++tc) {
+        unsigned int a[4];
+        char aa[4][10];
+
+        scanf("%u.%u.%u.%u\n%[^.].%[^.].%[^.].%s", a, a+1, a+2, a+3, aa[0], aa[1], aa[2], aa[3]);
+
+        int cnt = 0;
+
+        for(int i = 0; i < 4; ++i) {
+            bitset<10> bits(string(aa[i]));
+
+            if(bits.to_ulong() == a[i]) ++cnt;
+        }
+
+        printf("Case %d: %s\n", tc, (cnt == 4)? "Yes" : "No");
+    }
+
+    return 0;
+}
+
+
+// ------------------- Alternatively -------------------
+/*
+
 #include <iostream>
 #include <cstdio>
 using namespace std;
@@ -54,3 +89,5 @@ int main()
 
     return 0;
 }
+
+*/
