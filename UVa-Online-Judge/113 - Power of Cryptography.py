@@ -12,7 +12,7 @@ def main():
 		except:
 			break
 
-		stdout.write(str(round(pow(p, 1/n))) + '\n')
+		stdout.write(str( round(pow(p, 1/n)) ) + '\n')
 
 if __name__ == '__main__':
 	main()
