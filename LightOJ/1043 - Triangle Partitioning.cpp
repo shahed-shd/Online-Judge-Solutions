@@ -8,6 +8,29 @@
 #include <cmath>
 using namespace std;
 
+int main()
+{
+    int t;
+    scanf("%d", &t);
+
+    for(int tc = 1; tc <= t; ++tc) {
+        double AB, areaRatio;
+        scanf("%lf %*f %*f %lf", &AB, &areaRatio);
+
+        printf("Case %d: %.8lf\n", tc, AB * sqrt(areaRatio / (areaRatio+1)));
+    }
+
+    return 0;
+}
+
+
+// ---------- Alternatively (with Binary Search)--------------------
+// Run time		: 0.000 sec
+/*
+#include <cstdio>
+#include <cmath>
+using namespace std;
+
 double AB, AC, BC, areaRatio;
 
 double this_AD(double AD)
@@ -57,3 +80,4 @@ int main()
 
     return 0;
 }
+*/
