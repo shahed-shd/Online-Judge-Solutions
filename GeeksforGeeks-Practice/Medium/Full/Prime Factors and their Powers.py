@@ -1,6 +1,6 @@
 # ==================================================
 # Problem   :	Prime Factors and their Powers
-# Run time	: 0.077 sec.
+# Run time	:	0.077 sec.
 # Language	:	Python 2.7
 # ==================================================
 
