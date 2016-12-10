@@ -1,5 +1,5 @@
 # ==================================================
-# Problem	  :	10323 - Factorial! You Must be Kidding!!!
+# Problem	:	10323 - Factorial! You Must be Kidding!!!
 # Run time	:	0.040 sec.
 # Language	:	Python 3.5
 # ==================================================
