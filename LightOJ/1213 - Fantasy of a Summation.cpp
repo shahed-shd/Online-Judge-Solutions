@@ -1,6 +1,6 @@
 // ==================================================
 // Problem  :   1213 - Fantasy of a Summation
-// Run time :   0.012 sec.
+// Run time :   0.008 sec.
 // Language :   C++
 // ==================================================
 
@@ -41,10 +41,10 @@ int main()
 
         for(int i = 0; i < n; ++i) {
             scanf("%lld", &val);
-            s = (s + val) % mod;
+            s += val;
         }
 
-        printf("Case %d: %lld\n", tc, ((k%mod) * modular_pow(n, k-1, mod) * s) % mod);
+        printf("Case %d: %lld\n", tc, ((k%mod) * modular_pow(n, k-1, mod) * (s%mod)) % mod);
     }
 
     return 0;
