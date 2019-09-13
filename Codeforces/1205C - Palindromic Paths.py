@@ -29,7 +29,7 @@ def main():
     grid[1][3] = ask(1, 1, 1, 3)    # 1 if ask(1, 1, 1, 3) == 1 else 0
     grid[2][2] = ask(1, 1, 2, 2)
 
-    # Let assume grid[1][2] = 1
+    # Assume grid[1][2] = 1
     grid[1][2] = 1
     grid[2][3] = ask(1, 2, 2, 3)
     grid[2][1] = grid[2][3] if ask(2, 1, 2, 3) == 1 else (1 ^ grid[2][3])       # (1 ^ x) is to have the oppostive value of x
