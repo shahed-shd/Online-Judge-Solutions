@@ -39,7 +39,7 @@ int main()
         long long ans = 0;
 
         for (auto it = seq.begin(); it != seq.end(); ++it) {
-            double toFind = 2 * k - *it;
+            double toFind = 2 * k - *it;        // s/n = (s - x - y)/(n - 2)  => y = 2 * k - x
             int y = int(toFind);
             if (toFind == y) {
                 ans += upper_bound(it + 1, seq.end(), y) - lower_bound(it + 1, seq.end(), y);
